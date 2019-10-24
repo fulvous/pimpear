@@ -39,6 +39,11 @@ function debug {
   [ "${VERBOSE}" == "1" ] && echo "${NEGRITAS}${CYAN}${*}${RESET}"
 }
 
+function echon {
+  #funcion echo sin salto de carro
+  echo "${*}" | tr -d '\n'
+}
+
 function informa {
   NUMBER=1
   for ARG in "$@" ; do
@@ -73,6 +78,18 @@ function res_err {
   echon "${BLANCO}] "
   echon "${NEGRITA}${1}: "
   echo "${AMARILLO}${2}${RESET}"
+}
+
+function division {
+  #Linea divisoria
+  echo
+  COLS=$( tput cols )
+  echon ${AMARILLO}
+  for i in $( seq 1 $COLS ) ; do
+    echon "-"
+  done 
+  echo ${RESET}
+  echo
 }
 
 function jumbotron {

@@ -40,4 +40,24 @@ WD=$( cd "$(dirname "$0")" && pwd )
 . ${WD}/include/colores.sh
 . ${WD}/include/formato.sh
 
-echo "${AMARILLO}Este texto es amarillo${RESET}"
+echo "${AMARILLO}Este texto es amarillo${RESET} este ya no."
+
+debug "este es un debug que NO aparecera"
+
+VERBOSE=1
+
+debug "este es un debug que SI aparece"
+
+res_ok "El proceso Chanito" "hizo todo bien" "OK"
+
+res_err "El proceso Sutano" "falla al ejecutarse" "ERROR"
+
+informa "Comenzando con el proceso" "canijo" "para conquistar el mundo" 
+
+jumbotron "Este es un anuncio grande ideal para menu o para informacion de uso" \
+  "Soporta ir poniendo varias lineas" \
+  "Una despues de la otra en el mismo comando" \
+  "1) algo" \
+  "2) otra" \
+  "3) esta"
+
