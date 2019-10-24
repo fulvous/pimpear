@@ -35,5 +35,14 @@
 #along with Pimpear  If not, see 
 #<http://www.gnu.org/licenses/>.
 
-WD=$( cd "$(dirname "$0")" && pwd )
-echo "El script está ubicado en: $WD"
+
+NEGRITA=`tput bold`
+NEGRO=`tput setaf 0` 
+ROJO=`tput setaf 1`  
+VERDE=`tput setaf 2`  
+AMARILLO=`tput setaf 3`  
+AZUL=`tput setaf 4`  
+MAGENTA=`tput setaf 5`  
+CYAN=`tput setaf 6`  
+BLANCO=`tput setaf 7`  
+RESET=`tput sgr0`

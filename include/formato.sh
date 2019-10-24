@@ -35,5 +35,54 @@
 #along with Pimpear  If not, see 
 #<http://www.gnu.org/licenses/>.
 
-WD=$( cd "$(dirname "$0")" && pwd )
-echo "El script está ubicado en: $WD"
+function debug {
+  [ "${VERBOSE}" == "1" ] && echo "${NEGRITAS}${CYAN}${*}${RESET}"
+}
+
+function informa {
+  NUMBER=1
+  for ARG in "$@" ; do
+    case $NUMBER in
+      1)
+        echon ${NEGRITA}${ARG}": "
+      ;;
+      2)
+        echon ${AMARILLO}${ARG}" "
+      ;;
+      3)
+        echon "${BLANCO}-- ${CYAN}${ARG} "
+      ;;
+      *)
+        echon ${ARG}" "
+      ;;
+    esac
+    NUMBER=$(( NUMBER + 1 ))
+  done
+  echo "${BLANCO}--${RESET}"
+}
+
+function res_ok {
+  echon "${BLANCO}[ ${VERDE}${3} "
+  echon "${BLANCO}] "
+  echon "${NEGRITA}${1}: "
+  echo "${AMARILLO}${2}${RESET}"
+}
+
+function res_err {
+  echon "${BLANCO}[ ${ROJO}${3} "
+  echon "${BLANCO}] "
+  echon "${NEGRITA}${1}: "
+  echo "${AMARILLO}${2}${RESET}"
+}
+
+function jumbotron {
+  division
+  echo "  ${NEGRITAS}${AMARILLO}${1}${RESET}" | fmt -
+  echo
+  shift
+  for ARG in "$@" ; do
+    echo "  ${ARG}" | fmt -
+    echo 
+  done
+  division
+}

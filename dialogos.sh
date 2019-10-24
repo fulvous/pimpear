@@ -36,4 +36,8 @@
 #<http://www.gnu.org/licenses/>.
 
 WD=$( cd "$(dirname "$0")" && pwd )
-echo "El script está ubicado en: $WD"
+
+. ${WD}/include/colores.sh
+. ${WD}/include/formato.sh
+
+echo "${AMARILLO}Este texto es amarillo${RESET}"
