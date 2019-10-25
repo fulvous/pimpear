@@ -40,7 +40,14 @@ WD=$( cd "$(dirname "$0")" && pwd )
 . ${WD}/include/colores.sh
 . ${WD}/include/formato.sh
 
+VERBOSE=1
 
-jumbotron $"this_script" \
-  $"wait_for"
+export TEXTDOMAIN=english.sh
+export TEXTDOMAINDIR=${WD}/locale
+debug "TEXTDOMAINDIR=${TEXTDOMAINDIR}"
 
+jumbotron $"thisscript" \
+  $"waitfor"
+
+#hint: Correr el msgfmt asi:
+#  msgfmt -o ${WD}/locale/es/LC_MESSAGES/english.sh.mo ${WD}/locale/es/LC_MESSAGES/es.po
