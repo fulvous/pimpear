@@ -42,6 +42,8 @@ WD=$( cd "$(dirname "$0")" && pwd )
 
 VERBOSE=1
 
+export LC_ALL=en_US
+
 export TEXTDOMAIN=english.sh
 export TEXTDOMAINDIR=${WD}/locale
 debug "TEXTDOMAINDIR=${TEXTDOMAINDIR}"
