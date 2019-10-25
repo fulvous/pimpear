@@ -1,0 +1,4 @@
+msgid "this_script"
+msgstr "This script runs natively in english"
+msgid "wait_for"
+msgstr "Please wait for a proper translation into your language"

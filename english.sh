@@ -1,4 +1,4 @@
-#!/bin/bash -x
+#!/bin/bash
 
 #Pimpear es un set de scripts para el taller impartido en el FSL Vallarta 2019
 #Copyright (C) 2019 Leon Ramos @fulvous
@@ -35,11 +35,12 @@
 #along with Pimpear  If not, see 
 #<http://www.gnu.org/licenses/>.
 
+WD=$( cd "$(dirname "$0")" && pwd )
 
-echo "Este es un script que se va a debugear"
+. ${WD}/include/colores.sh
+. ${WD}/include/formato.sh
 
-PWD=$( pwd )
 
-echo $PWD
+jumbotron $"this_script" \
+  $"wait_for"
 
-exit 0
